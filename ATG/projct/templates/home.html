@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../static/css/landing_page.css">
+</head>
+<body>
+    <div class="content">
+        <div class="ellipse">
+            <img src="../static/img/ellipse.png" alt="">
+        </div>
+        <div class="row">
+                <img src="../static/img/undraw_schedule_re_2vro.svg" alt="" class="element">
+            <div class="col-2">
+                <h1>TIMETABLE GENERATOR</h1>
+                <p> Minimalist schedule design, maximum impact.</p>
+                <div class="btns">
+                    <div class="register_btn">
+                        <button> <a href={% url 'register'%}> Register </a> </button>
+                    </div>
+                    <div class="login_btn">
+                        <button> <a href={% url 'login'%}> Login </a> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

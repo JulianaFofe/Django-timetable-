@@ -1,0 +1,38 @@
+{% load static %}
+
+<html>
+
+    <head>
+
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <div id="header">
+            {% if request.user.is_authenticated %}
+            <ul class="menu">
+
+            </ul>
+        {% endif %}
+
+        </div>
+
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">
+            {{ message|safe }}
+                <a href="#" class="close"></a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    </body>
+</html>

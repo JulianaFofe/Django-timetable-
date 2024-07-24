@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}ATG | Register{% endblock %}
+
+{% block content %}
+
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #5971C5, white);
+            font-family: 'Times New roman', sans-serif;
+        }
+        .register-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to bottom, #5971C5, white);
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-form h1 {
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            font-family: 'Times New roman', sans-serif;
+        }
+
+        .register-form form {
+            margin-top: 20px;
+            font-size: 25px;
+        }
+
+        .register-form input[type="text"],
+        .register-form input[type="password"] {
+            width: 323px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 19px;
+            background: #E4DEDE;
+            font-size: 16px;
+        }
+
+        .register-form input{
+            width: 323px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 19px;
+            background: #E4DEDE;
+            font-size: 16px;
+        }
+
+        .register-form input[type="submit"] {
+            width: 128px;
+            padding: 15px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 20px;
+            background: #6B83FF;
+            color: black;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .register-form input[type="submit"]:hover {
+            transform: scale(1.2);
+        }
+
+        .register-form p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .label{
+            margin-left: 40px;
+            font-size: 20px;
+        }
+
+        .register-form a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .register-form a:hover {
+            color: red;
+            text-decoration: none;
+        }
+
+        .register-form span {
+            display: none;
+        }
+
+    </style>
+
+    <div class="register-form">
+        <h1>Create an account</h1>
+        <form method="post">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Create account"></p>
+            <p><a href="{% url 'login' %}">Already have an account?</a></p>
+        </form>
+    </div>
+
+{% endblock %}
